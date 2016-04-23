@@ -21,18 +21,23 @@ public class Connection
 	   static final int MESSAGE_MENU = 4;
 	   static final int CHANGE_PASSCODE = 5;
 	   static final int CHANGE_GREETING = 6;
+	   static final int CONTACTS = 7;
 
 	   private static final String INITIAL_PROMPT = 
 	         "Enter mailbox number followed by #";      
 	   static final String MAILBOX_MENU_TEXT = 
 	         "Enter 1 to listen to your messages\n"
 	         + "Enter 2 to change your passcode\n"
-	         + "Enter 3 to change your greeting";
+	         + "Enter 3 to change your greeting\n"
+	         + "Enter 4 to manage contacts\n";
 	   static final String MESSAGE_MENU_TEXT = 
 	         "Enter 1 to listen to the current message\n"
 	         + "Enter 2 to save the current message\n"
 	         + "Enter 3 to delete the current message\n"
 	         + "Enter 4 to return to the main menu";
+	   static final String CONTACTS_MENU_TEXT = 
+		         "Enter 1 add contact\n"
+		        ;
 
    /**
       Construct a Connection object.
@@ -69,6 +74,8 @@ public class Connection
     	  currentState=new MailBoxState();
       else if (state == MESSAGE_MENU)
     	  currentState=new MessageMenuState();
+      else if (state == CONTACTS)
+    	  currentState=new ListContactsState();
       
       currentState.dial(key, this);
    }
