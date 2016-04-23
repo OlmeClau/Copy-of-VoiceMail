@@ -1,12 +1,12 @@
 
-public class MessageMenuState {
+public class MessageMenuState implements ConnectionState{
 
 	/**
 	      Respond to the user's selection from message menu.
 	      @param key the phone key pressed by the user
 	 * @param connection TODO
 	   */
-	   void messageMenu(String key, Connection connection)
+	   public void dial(String key, Connection connection)
 	   {
 	      if (key.equals("1"))
 	      {

@@ -1,12 +1,12 @@
 
-public class ConnectedState {
+public class ConnectedState implements ConnectionState {
 
 	/**
 	      Try to connect the user with the specified mailbox.
 	      @param key the phone key pressed by the user
 	 * @param connection TODO
 	   */
-	   void connect(String key, Connection connection)
+	   public void dial(String key, Connection connection)
 	   {
 	      if (key.equals("#"))
 	      {

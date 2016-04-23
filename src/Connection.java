@@ -55,18 +55,22 @@ public class Connection
    */
    public void dial(String key)
    {
+	   ConnectionState currentState= null;
       if (state == CONNECTED)
-         new ConnectedState().connect(key, this);
+        currentState= new ConnectedState();
+      
       else if (state == RECORDING)
-         new RecordingState().login(key, this);
+    	  currentState= new RecordingState();
       else if (state == CHANGE_PASSCODE)
-         new ChangePasscodeState().changePasscode(key, this);
+    	  currentState= new ChangePasscodeState();
       else if (state == CHANGE_GREETING)
-         new ChangeGreetingState().changeGreeting(key, this);
+    	  currentState= new ChangeGreetingState();
       else if (state == MAILBOX_MENU)
-         new MailBoxState().mailboxMenu(key, this);
+    	  currentState=new MailBoxState();
       else if (state == MESSAGE_MENU)
-         new MessageMenuState().messageMenu(key, this);
+    	  currentState=new MessageMenuState();
+      
+      currentState.dial(key, this);
    }
 
    /**

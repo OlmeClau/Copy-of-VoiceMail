@@ -1,12 +1,12 @@
 
-public class ChangePasscodeState {
+public class ChangePasscodeState implements ConnectionState {
 
 	/**
 	      Change passcode.
 	      @param key the phone key pressed by the user
 	 * @param connection TODO
 	   */
-	   void changePasscode(String key, Connection connection)
+	   public void dial(String key, Connection connection)
 	   {
 	      if (key.equals("#"))
 	      {

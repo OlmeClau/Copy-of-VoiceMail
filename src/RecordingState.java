@@ -1,12 +1,12 @@
 
-public class RecordingState {
+public class RecordingState implements ConnectionState{
 
 	/**
 	      Try to log in the user.
 	      @param key the phone key pressed by the user
 	 * @param connection TODO
 	   */
-	   void login(String key, Connection connection)
+	   public void dial(String key, Connection connection)
 	   {
 	      if (key.equals("#"))
 	      {
